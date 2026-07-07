@@ -14,7 +14,7 @@ export const conteudoOriginal = {
         { time: '14:00 - 16:30', activity: 'Minicurso: Avaliação Motora: o teste MABC em foco', details: 'Prof. Dr. Lúcio Fernandes Ferreira (UFAM)' },
       ],
       day1: [
-        { time: '07:00 - 08:00', activity: 'Recepção' },
+        { time: '07:00 - 08:00', activity: 'Recepções' },
         { time: '08:00 - 09:00', activity: 'Abertura do Evento', details: 'Profa. Dra. Andrea M. Freudenheim (EEFE-USP)\n"Relação entre o Laboratório de Comportamento Motor (LACOM) e o Congresso Brasileiro de Comportamento Motor"' },
         { time: '09:00 - 10:00', activity: 'Palestra de Abertura', details: 'Prof. Dr. Mark Latash (Pennsylvania State University)\n"Processes that do not affect task performance"\nModeradora: Profa. Paula Fávaro Polastri Zago (UNESP-Bauru)' },
         { time: '10:00 - 10:30', activity: 'Coffee-Break' },
