@@ -21,7 +21,7 @@ export const translations = {
       title: 'XIII CONGRESSO BRASILEIRO DE',
       titleMain: 'COMPORTAMENTO MOTOR',
       subtitle: 'Das Perguntas Clássicas às Metodologias Inovadoras',
-      date: '22, 23 e 24 de Julho de 2026',
+      date: conteudoOriginal.pt.hero.date,
       submitPaper: 'Submissões Encerradas',
       registerNow: 'Garantir minha vaga',
       followInstagram: 'SIGA-NOS NO INSTAGRAM',
@@ -29,16 +29,16 @@ export const translations = {
       organizedBy: 'organização',
       supportedBy: 'apoio',
       soldOut: 'VAGAS ESGOTADAS!',
-      feeExtension: 'últimas vagas disponíveis! garanta sua participação!',
+      feeExtension: conteudoOriginal.pt.hero.feeExtension,
       deadlineExtension: 'Submissões encerradas. Acompanhe os resultados!',
-      viewSchedule: 'O cronograma completo já está disponível. Clique aqui para conferir!',
-      viewScheduleMobile: 'Cronograma já disponível!',
+      viewSchedule: conteudoOriginal.pt.hero.viewSchedule,
+      viewScheduleMobile: conteudoOriginal.pt.hero.viewScheduleMobile,
       posterGuidelinesLink: 'Orientações sobre pôsteres',
       updatedScheduleLink: 'Programação Atualizada'
     },
     announcement: {
-      whatsapp: 'Informações serão divulgadas no dia do evento pelo grupo de WhatsApp Associados SOCIBRACOM',
-      joinGroup: 'Escaneie o QR Code e participe do grupo',
+      whatsapp: conteudoOriginal.pt.announcement.whatsapp,
+      joinGroup: conteudoOriginal.pt.announcement.joinGroup,
     },
     about: {
       title: 'O CBCM 2026 na',
@@ -67,12 +67,12 @@ export const translations = {
     abstractSubmission: {
       title: 'Submissões ',
       titleHighlight: 'encerradas',
-      description: 'As submissões de trabalhos para o XIII CBCM estão encerradas.\n\nAgradecemos a todos que enviaram suas pesquisas!',
-      submissionCount: '+280 submissões recebidas',
+      description: conteudoOriginal.pt.abstractSubmission.description,
+      submissionCount: conteudoOriginal.pt.abstractSubmission.submissionCount,
       deadline: 'Submissões encerradas',
       deadlineShort: 'Encerrado',
-      limit: 'Limite de 1 trabalho por inscrição',
-      limitShort: '1 RESUMO POR CPF',
+      limit: conteudoOriginal.pt.abstractSubmission.limit,
+      limitShort: conteudoOriginal.pt.abstractSubmission.limitShort,
       button: 'SUBMISSÕES ENCERRADAS',
     },
     posterGuidelines: {
@@ -108,7 +108,7 @@ export const translations = {
     registration: {
       title: 'Taxas de',
       titleHighlight: 'Inscrição',
-      validUntil: '*LOTE ENCERRADO',
+      validUntil: conteudoOriginal.pt.registration.validUntil,
       categories: {
         undergrad: 'Graduação',
         teacher: 'Professores Rede Pública',
@@ -116,23 +116,23 @@ export const translations = {
         professional: 'Profissionais',
       },
       prices: {
-        undergrad: 'R$ 203,50',
-        teacher: 'R$ 203,50',
-        grad: 'R$ 418,00',
-        professional: 'R$ 616,00',
+        undergrad: conteudoOriginal.pt.registration.prices.undergrad,
+        teacher: conteudoOriginal.pt.registration.prices.teacher,
+        grad: conteudoOriginal.pt.registration.prices.grad,
+        professional: conteudoOriginal.pt.registration.prices.professional,
       },
       cta: {
         badge: 'ENCERRADAS',
         title: 'Inscrições',
         titleHighlight: 'encerradas',
-        description: 'As inscrições para o XIII CBCM foram encerradas. Agradecemos a todos pelo interesse e nos vemos no evento!',
-        descriptionMobile: 'Inscrições encerradas. Agradecemos a todos e nos vemos no evento!',
+        description: conteudoOriginal.pt.registration.cta.description,
+        descriptionMobile: conteudoOriginal.pt.registration.cta.descriptionMobile,
         button: 'INSCRIÇÕES ENCERRADAS',
       },
     },
     alert: {
       attention: 'ATENÇÃO:',
-      message: 'Inscrições e submissões estão encerradas! Nos vemos no evento.',
+      message: conteudoOriginal.pt.alert.message,
     },
     speakers: {
       title: 'Palestrantes',
@@ -156,29 +156,22 @@ export const translations = {
     },
     location: {
       title: 'Local do Evento',
-      venue: 'Faculdade de Arquitetura e Urbanismo e de Design da Universidade de São Paulo - FAUUSP',
+      venue: conteudoOriginal.pt.location.venue,
       openMaps: 'Abrir no Google Maps',
       accommodationTitle: 'Hospedagem',
-      accommodationSubtitle: 'Confira as opções de hospedagem com descontos exclusivos para os congressistas do XIII CBCM.',
+      accommodationSubtitle: conteudoOriginal.pt.location.accommodationSubtitle,
       discount: {
         badge: 'Desconto Exclusivo',
-        title: 'Hospedagem no Transamérica Fit Villa Lobos',
-        description: 'Garanta sua estadia com condições especiais utilizando o PROMO CODE do evento.',
+        title: conteudoOriginal.pt.location.discount.title,
+        description: conteudoOriginal.pt.location.discount.description,
         button: 'Ir para o site de reservas',
         howToTitle: 'Como usar seu código:',
-        steps: [
-          "Acesse letsatlantica.com.br",
-          "Busque por Transamérica Fit Villa Lobos",
-          "Defina o período de estadia",
-          "Escolha a quantidade de pessoas",
-          "Insira XIIICBCM em 'Tem um código?'",
-          "Clique em procurar e reserve!"
-        ]
+        steps: conteudoOriginal.pt.location.discount.steps
       },
       discount2: {
         badge: 'Tarifa Especial',
-        title: 'Hospedagem no ibis Styles SP Faria Lima',
-        description: 'Diárias exclusivas para o evento: R$ 445 (Duplo) | R$ 390 (Single)',
+        title: conteudoOriginal.pt.location.discount2.title,
+        description: conteudoOriginal.pt.location.discount2.description,
         button: 'Reservar com desconto'
       }
     },
@@ -317,7 +310,7 @@ Será premiado um único trabalho por categoria, independentemente da subárea.
       title: 'XIII BRAZILIAN CONGRESS ON',
       titleMain: 'MOTOR BEHAVIOR',
       subtitle: 'From Classical Inquiries to Innovative Methodologies',
-      date: 'JULY 22-24, 2026',
+      date: conteudoOriginal.en.hero.date,
       submitPaper: 'Submissions Closed',
       registerNow: 'Secure my spot',
       followInstagram: 'FOLLOW US ON INSTAGRAM',
@@ -325,16 +318,16 @@ Será premiado um único trabalho por categoria, independentemente da subárea.
       organizedBy: 'organized by',
       supportedBy: 'supported by',
       soldOut: 'SOLD OUT!',
-      feeExtension: 'Last spots available! Secure your participation.',
+      feeExtension: conteudoOriginal.en.hero.feeExtension,
       deadlineExtension: 'Submissions are now closed. Stay tuned for results!',
-      viewSchedule: 'The full schedule is now available. Click here to check it out!',
-      viewScheduleMobile: 'Schedule available!',
+      viewSchedule: conteudoOriginal.en.hero.viewSchedule,
+      viewScheduleMobile: conteudoOriginal.en.hero.viewScheduleMobile,
       posterGuidelinesLink: 'Poster Guidelines',
       updatedScheduleLink: 'Updated Schedule'
     },
     announcement: {
-      whatsapp: 'Information will be released on the day of the event by the SOCIBRACOM Associates WhatsApp group',
-      joinGroup: 'Scan the QR Code and join the group',
+      whatsapp: conteudoOriginal.en.announcement.whatsapp,
+      joinGroup: conteudoOriginal.en.announcement.joinGroup,
     },
     about: {
       title: 'CBCM 2026 AT THE',
@@ -350,7 +343,7 @@ Será premiado um único trabalho por categoria, independentemente da subárea.
       p3_end: ' of those who believe that the advancement of knowledge thrives on debate and scientific fellowship.',
       p4_start: 'USP opens its doors so that, together, ',
       p4_italic: 'we may celebrate the past, discuss the present, and envision the future of motor behavior',
-      p4_end: ' in Brazil and across the world.',
+      p4_end: ' in Brazil across the world.',
       areasTitle: 'Thematic Areas',
       railText: 'BRAZILIAN CONGRESS ON MOTOR BEHAVIOR • XIII CBCM • 2026',
       pillars: {
@@ -363,12 +356,12 @@ Será premiado um único trabalho por categoria, independentemente da subárea.
     abstractSubmission: {
       title: 'Submissions ',
       titleHighlight: 'closed',
-      description: 'Abstract submissions for the XIII CBCM are now closed.\n\nThank you to everyone who submitted their research!',
-      submissionCount: '+280 submissions received',
+      description: conteudoOriginal.en.abstractSubmission.description,
+      submissionCount: conteudoOriginal.en.abstractSubmission.submissionCount,
       deadline: 'Submissions closed',
       deadlineShort: 'Closed',
-      limit: 'Limit of 1 work per registration',
-      limitShort: '1 ABSTRACT PER AUTHOR',
+      limit: conteudoOriginal.en.abstractSubmission.limit,
+      limitShort: conteudoOriginal.en.abstractSubmission.limitShort,
       button: 'SUBMISSIONS CLOSED',
     },
     posterGuidelines: {
@@ -404,7 +397,7 @@ Será premiado um único trabalho por categoria, independentemente da subárea.
     registration: {
       title: 'Registration',
       titleHighlight: 'Fees',
-      validUntil: '*REGISTRATION CLOSED',
+      validUntil: conteudoOriginal.en.registration.validUntil,
       categories: {
         undergrad: 'Undergraduate Student',
         teacher: 'Public School Teacher',
@@ -412,23 +405,23 @@ Será premiado um único trabalho por categoria, independentemente da subárea.
         professional: 'Professional',
       },
       prices: {
-        undergrad: 'R$ 203.50',
-        teacher: 'R$ 203.50',
-        grad: 'R$ 418.00',
-        professional: 'R$ 616.00',
+        undergrad: conteudoOriginal.en.registration.prices.undergrad,
+        teacher: conteudoOriginal.en.registration.prices.teacher,
+        grad: conteudoOriginal.en.registration.prices.grad,
+        professional: conteudoOriginal.en.registration.prices.professional,
       },
       cta: {
         badge: 'CLOSED',
         title: 'Registration',
         titleHighlight: 'closed',
-        description: 'Registrations for the XIII CBCM are now closed. Thank you for your interest and we look forward to seeing you at the event!',
-        descriptionMobile: 'Registrations closed. Thank you all and see you at the event!',
+        description: conteudoOriginal.en.registration.cta.description,
+        descriptionMobile: conteudoOriginal.en.registration.cta.descriptionMobile,
         button: 'REGISTRATION CLOSED',
       },
     },
     alert: {
       attention: 'ATTENTION:',
-      message: 'Registrations and submissions are closed! See you at the event.',
+      message: conteudoOriginal.en.alert.message,
     },
     speakers: {
       title: 'Featured',
@@ -452,29 +445,22 @@ Será premiado um único trabalho por categoria, independentemente da subárea.
     },
     location: {
       title: 'Event Venue',
-      venue: 'Faculty of Architecture and Urbanism and Design of the University of São Paulo - FAUUSP',
+      venue: conteudoOriginal.en.location.venue,
       openMaps: 'Open in Google Maps',
       accommodationTitle: 'Accommodation',
-      accommodationSubtitle: 'Check out the accommodation options with exclusive discounts for XIII CBCM attendees.',
+      accommodationSubtitle: conteudoOriginal.en.location.accommodationSubtitle,
       discount: {
         badge: 'Exclusive Discount',
-        title: 'Accommodation at Transamérica Fit Villa Lobos',
-        description: 'Secure your stay with special rates using the official event promo code.',
+        title: conteudoOriginal.en.location.discount.title,
+        description: conteudoOriginal.en.location.discount.description,
         button: 'Go to reservation site',
         howToTitle: 'How to use your code:',
-        steps: [
-          "Access letsatlantica.com.br",
-          "Search for Transamérica Fit Villa Lobos",
-          "Define the stay period",
-          "Choose the number of people",
-          "Insert XIIICBCM in 'Have a code?'",
-          "Click search and reserve!"
-        ]
+        steps: conteudoOriginal.en.location.discount.steps
       },
       discount2: {
         badge: 'Special Rate',
-        title: 'Accommodation at ibis Styles SP Faria Lima',
-        description: 'Exclusive rates for the event: R$ 445 (Double) | R$ 390 (Single)',
+        title: conteudoOriginal.en.location.discount2.title,
+        description: conteudoOriginal.en.location.discount2.description,
         button: 'Book with discount'
       }
     },

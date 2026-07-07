@@ -5,11 +5,77 @@
 export const conteudoOriginal = {
   pt: {
     // ⚠️ EDITE SÓ O TEXTO ENTRE ASPAS. NÃO APAGUE VÍRGULAS OU CHAVES { }
+    
+    // Banner de Alerta (topo do site)
+    alert: {
+      message: 'Inscrições e submissões estão encerradas! Nos vemos no evento.'
+    },
+
+    // Informações da seção principal do topo (Hero)
+    hero: {
+      date: '22, 23 e 24 de Julho de 2026',
+      feeExtension: 'últimas vagas disponíveis! garanta sua participação!',
+      viewSchedule: 'O cronograma completo já está disponível. Clique aqui para conferir!',
+      viewScheduleMobile: 'Cronograma já disponível!',
+    },
+
+    // Anúncio do WhatsApp (Banner verde)
+    announcement: {
+      whatsapp: 'Informações serão divulgadas no dia do evento pelo grupo de WhatsApp Associados SOCIBRACOM',
+      joinGroup: 'Escaneie o QR Code e participe do grupo',
+    },
+
+    // Submissão de Resumos
+    abstractSubmission: {
+      description: 'As submissões de trabalhos para o XIII CBCM estão encerradas.\n\nAgradecemos a todos que enviaram suas pesquisas!',
+      submissionCount: '+280 submissões recebidas',
+      limit: 'Limite de 1 trabalho por inscrição',
+      limitShort: '1 RESUMO POR CPF'
+    },
+
+    // Taxas de Inscrição / Lote
+    registration: {
+      validUntil: '*LOTE ENCERRADO',
+      prices: {
+        undergrad: 'R$ 203,50',
+        teacher: 'R$ 203,50',
+        grad: 'R$ 418,00',
+        professional: 'R$ 616,00',
+      },
+      cta: {
+        description: 'As inscrições para o XIII CBCM foram encerradas. Agradecemos a todos pelo interesse e nos vemos no evento!',
+        descriptionMobile: 'Inscrições encerradas. Agradecemos a todos e nos vemos no evento!',
+      }
+    },
+
+    // Hospedagem / Descontos em Hotéis e Local do Evento
+    location: {
+      venue: 'Faculdade de Arquitetura e Urbanismo e de Design da Universidade de São Paulo - FAUUSP',
+      accommodationSubtitle: 'Confira as opções de hospedagem com descontos exclusivos para os congressistas do XIII CBCM.',
+      discount: {
+        title: 'Hospedagem no Transamérica Fit Villa Lobos',
+        description: 'Garanta sua estadia com condições especiais utilizando o PROMO CODE do evento.',
+        steps: [
+          "Acesse letsatlantica.com.br",
+          "Busque por Transamérica Fit Villa Lobos",
+          "Defina o período de estadia",
+          "Escolha a quantidade de pessoas",
+          "Insira XIIICBCM in 'Tem um código?'",
+          "Clique em procurar e reserve!"
+        ]
+      },
+      discount2: {
+        title: 'Hospedagem no ibis Styles SP Faria Lima',
+        description: 'Diárias exclusivas para o evento: R$ 445 (Duplo) | R$ 390 (Single)',
+      }
+    },
+
+    // Programação completa do Evento
     schedule: {
       day0: [
         { time: '13:30 - 17:30', activity: 'Minicurso: Técnicas de monitoramento cortical durante o controle locomotor: Fundamentos e aplicações com fNIRS', details: 'Prof. Dr. Diego Orcioli-Silva (UNESP-Rio Claro)' },
         { time: '13:30 - 15:30', activity: 'Minicurso: Practical Workshop on the Constraints-led Approach and Nonlinear Pedagogy', details: 'Prof. Dr. James Rudd (Norwegian School of Sport Sciences)' },
-        { time: '14:00 - 16:30', activity: 'Minicurso: Introdução ao software R para análise exploratória de dados', details: 'Prof. Dr. Flávio Henrique Bastos (EEFEUSP)' },
+        { time: '14:00 - 16:30', activity: 'Minicurso: Introdução ao software R para análise exploratória de dados', details: 'Prof. Dr. Flávio Henrique Bastos (EEFE-USP)' },
         { time: '14:00 - 16:30', activity: 'Minicurso: Ciência de Redes no Comportamento Motor: Aplicações para avaliação e intervenção motora', details: 'Prof. Dr. Paulo Felipe Ribeiro Bandeira (URCA-CE)' },
         { time: '14:00 - 16:30', activity: 'Minicurso: Avaliação Motora: o teste MABC em foco', details: 'Prof. Dr. Lúcio Fernandes Ferreira (UFAM)' },
       ],
@@ -52,13 +118,80 @@ export const conteudoOriginal = {
         { time: '16:30 - 17:30', activity: 'Palestra de Encerramento', details: 'Prof. Dr. Gregor Schöner (Rhur University)\n"How complex are the descending activation patterns that drive simple arm movements?"\nModerador: Prof. Dr. Flávio Bastos (EEFE-USP)' },
       ]
     },
-    // ⚠️ EDITE SÓ O TEXTO ENTRE ASPAS. NÃO APAGUE VÍRGULAS OU CHAVES { }
+
+    // Rodapé / Contato
     footer: {
       email: 'usp.cbcm@gmail.com'
     }
   },
   en: {
     // ⚠️ EDITE SÓ O TEXTO ENTRE ASPAS. NÃO APAGUE VÍRGULAS OU CHAVES { }
+    
+    // Alert Banner (top of site)
+    alert: {
+      message: 'Registrations and submissions are closed! See you at the event.'
+    },
+
+    // Main top section details (Hero)
+    hero: {
+      date: 'JULY 22-24, 2026',
+      feeExtension: 'Last spots available! Secure your participation.',
+      viewSchedule: 'The full schedule is now available. Click here to check it out!',
+      viewScheduleMobile: 'Schedule available!',
+    },
+
+    // WhatsApp Announcement (Green banner)
+    announcement: {
+      whatsapp: 'Information will be released on the day of the event by the SOCIBRACOM Associates WhatsApp group',
+      joinGroup: 'Scan the QR Code and join the group',
+    },
+
+    // Abstract Submission
+    abstractSubmission: {
+      description: 'Abstract submissions for the XIII CBCM are now closed.\n\nThank you to everyone who submitted their research!',
+      submissionCount: '+280 submissions received',
+      limit: 'Limit of 1 work per registration',
+      limitShort: '1 ABSTRACT PER AUTHOR'
+    },
+
+    // Registration Fees
+    registration: {
+      validUntil: '*REGISTRATION CLOSED',
+      prices: {
+        undergrad: 'R$ 203.50',
+        teacher: 'R$ 203.50',
+        grad: 'R$ 418.00',
+        professional: 'R$ 616.00',
+      },
+      cta: {
+        description: 'Registrations for the XIII CBCM are now closed. Thank you for your interest and we look forward to seeing you at the event!',
+        descriptionMobile: 'Registrations closed. Thank you all and see you at the event!',
+      }
+    },
+
+    // Hotel Discounts and Venue Information
+    location: {
+      venue: 'Faculty of Architecture and Urbanism and Design of the University of São Paulo - FAUUSP',
+      accommodationSubtitle: 'Check out the accommodation options with exclusive discounts for XIII CBCM attendees.',
+      discount: {
+        title: 'Accommodation at Transamérica Fit Villa Lobos',
+        description: 'Secure your stay with special rates using the official event promo code.',
+        steps: [
+          "Access letsatlantica.com.br",
+          "Search for Transamérica Fit Villa Lobos",
+          "Define the stay period",
+          "Choose the number of people",
+          "Insert XIIICBCM in 'Have a code?'",
+          "Click search and reserve!"
+        ]
+      },
+      discount2: {
+        title: 'Accommodation at ibis Styles SP Faria Lima',
+        description: 'Exclusive rates for the event: R$ 445 (Double) | R$ 390 (Single)',
+      }
+    },
+
+    // Event Schedule
     schedule: {
       day0: [
         { time: '01:30 PM - 05:30 PM', activity: 'Short Course: Cortical monitoring techniques during locomotor control: Fundamentals and applications with fNIRS', details: 'Prof. Dr. Diego Orcioli-Silva (UNESP-Rio Claro)' },
@@ -106,7 +239,8 @@ export const conteudoOriginal = {
         { time: '04:30 PM - 05:30 PM', activity: 'Closing Keynote', details: 'Prof. Dr. Gregor Schöner (Rhur University)\n"How complex are the descending activation patterns that drive simple arm movements?"\nModerator: Prof. Dr. Flávio Bastos (EEFE-USP)' },
       ]
     },
-    // ⚠️ EDITE SÓ O TEXTO ENTRE ASPAS. NÃO APAGUE VÍRGULAS OU CHAVES { }
+
+    // Footer / Contact
     footer: {
       email: 'usp.cbcm@gmail.com'
     }
