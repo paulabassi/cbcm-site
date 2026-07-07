@@ -395,7 +395,7 @@ export const conteudoOriginal = {
       ],
       day1: [
         { time: '07:00 - 08:00', activity: 'Recepção' },
-        { time: '08:00 - 09:00', activity: 'Abertura do Evento', details: 'Profa. Dra. Andrea M. Freudenheim (EEFE-USP)\n"Relação entre o Laboratório de Comportamento Motor (LACOM) e o Congresso Brasileiro de Comportamento Motor"' },
+        { time: '08:00 - 09:00', activity: 'Abertura do Evento', details: 'Profa. Dra. Andrea M. Freudenheim (EEFEUSP)\n"Relação entre o Laboratório de Comportamento Motor (LACOM) e o Congresso Brasileiro de Comportamento Motor"' },
         { time: '09:00 - 10:00', activity: 'Palestra de Abertura', details: 'Prof. Dr. Mark Latash (Pennsylvania State University)\n"Processes that do not affect task performance"\nModeradora: Profa. Paula Fávaro Polastri Zago (UNESP-Bauru)' },
         { time: '10:00 - 10:30', activity: 'Coffee-Break' },
         { time: '10:30 - 12:00', activity: 'Temas Livres' },
