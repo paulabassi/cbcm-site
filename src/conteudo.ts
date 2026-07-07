@@ -9,7 +9,7 @@ export const conteudoOriginal = {
       day0: [
         { time: '13:30 - 17:30', activity: 'Minicurso: Técnicas de monitoramento cortical durante o controle locomotor: Fundamentos e aplicações com fNIRS', details: 'Prof. Dr. Diego Orcioli-Silva (UNESP-Rio Claro)' },
         { time: '13:30 - 15:30', activity: 'Minicurso: Practical Workshop on the Constraints-led Approach and Nonlinear Pedagogy', details: 'Prof. Dr. James Rudd (Norwegian School of Sport Sciences)' },
-        { time: '14:00 - 16:30', activity: 'Minicurso: Introdução ao software R para análise exploratória de dados', details: 'Prof. Dr. Flávio Henrique Bastos (EEFE-USP)' },
+        { time: '14:00 - 16:30', activity: 'Minicurso: Introdução ao software R para análise exploratória de dados', details: 'Prof. Dr. Flávio Henrique Bastos (EEFEUSP)' },
         { time: '14:00 - 16:30', activity: 'Minicurso: Ciência de Redes no Comportamento Motor: Aplicações para avaliação e intervenção motora', details: 'Prof. Dr. Paulo Felipe Ribeiro Bandeira (URCA-CE)' },
         { time: '14:00 - 16:30', activity: 'Minicurso: Avaliação Motora: o teste MABC em foco', details: 'Prof. Dr. Lúcio Fernandes Ferreira (UFAM)' },
       ],
