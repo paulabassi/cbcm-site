@@ -1,9 +1,11 @@
-import React, { useState, Suspense, lazy } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import AnnouncementBanner from './components/AnnouncementBanner';
 import QuoteSection from './components/QuoteSection';
 import About from './components/About';
+import MinicursosModal from './components/MinicursosModal';
+import { conteudoOriginal } from './src/conteudo';
 
 // Lazy load non-critical sections
 const Schedule = lazy(() => import('./components/Schedule'));
@@ -20,6 +22,83 @@ import { Language, translations } from './src/translations';
 
 const App: React.FC = () => {
   const [lang, setLang] = useState<Language>('pt');
+  const [isMinicursosOpen, setIsMinicursosOpen] = useState(false);
+
+  const handleOpenMinicursos = () => setIsMinicursosOpen(true);
+  const handleCloseMinicursos = () => setIsMinicursosOpen(false);
+
+  useEffect(() => {
+    let intervalId: any;
+
+    const scrollToHash = (hash: string) => {
+      if (!hash) return;
+      const cleanHash = hash.replace('#', '');
+      if (!cleanHash) return;
+
+      let attempts = 0;
+      const maxAttempts = 50; // 5 seconds maximum
+
+      if (intervalId) clearInterval(intervalId);
+
+      intervalId = setInterval(() => {
+        const element = document.getElementById(cleanHash);
+        if (element) {
+          clearInterval(intervalId);
+          
+          const topBanner = (translations[lang] as any).topBanner || { show: true };
+          const headerOffset = topBanner.show ? 110 : 70; // offset for the warning banner + compact menu
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        } else {
+          attempts++;
+          if (attempts >= maxAttempts) {
+            clearInterval(intervalId);
+          }
+        }
+      }, 100);
+    };
+
+    // Scroll on load if hash exists
+    if (window.location.hash) {
+      setTimeout(() => {
+        scrollToHash(window.location.hash);
+      }, 150);
+    }
+
+    // Listen to hash change
+    const handleHashChange = () => {
+      scrollToHash(window.location.hash);
+    };
+
+    // Intercept anchor link clicks for smooth scroll with custom offset
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const anchor = target.closest('a');
+      if (anchor) {
+        const href = anchor.getAttribute('href');
+        if (href && href.startsWith('#') && href !== '#') {
+          e.preventDefault();
+          const hash = href;
+          window.history.pushState(null, '', hash);
+          scrollToHash(hash);
+        }
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    document.addEventListener('click', handleAnchorClick);
+
+    return () => {
+      if (intervalId) clearInterval(intervalId);
+      window.removeEventListener('hashchange', handleHashChange);
+      document.removeEventListener('click', handleAnchorClick);
+    };
+  }, []);
 
   return (
     <div className="relative min-h-screen w-full bg-black text-emerald-50 selection:bg-emerald-500 selection:text-black overflow-x-hidden">
@@ -34,9 +113,9 @@ const App: React.FC = () => {
       </div>
 
       <div className="relative z-10 flex flex-col min-h-screen">
-        <Header lang={lang} setLang={setLang} />
+        <Header lang={lang} setLang={setLang} onOpenMinicursos={handleOpenMinicursos} />
         <main className="flex-grow">
-          <Hero lang={lang} />
+          <Hero lang={lang} onOpenMinicursos={handleOpenMinicursos} />
           <AnnouncementBanner lang={lang} />
           <QuoteSection lang={lang} />
           <About lang={lang} />
@@ -147,6 +226,9 @@ const App: React.FC = () => {
             </div>
           </div>
         </footer>
+        {conteudoOriginal[lang].minicursos?.show !== false && (
+          <MinicursosModal isOpen={isMinicursosOpen} onClose={handleCloseMinicursos} lang={lang} />
+        )}
       </div>
     </div>
   );

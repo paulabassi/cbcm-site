@@ -2,17 +2,31 @@
 import React, { useState, useEffect } from 'react';
 import { ASSETS } from '../src/constants';
 import { Language, translations } from '../src/translations';
+import { conteudoOriginal } from '../src/conteudo';
 
 interface HeaderProps {
   lang: Language;
   setLang: (lang: Language) => void;
+  onOpenMinicursos: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ lang, setLang }) => {
+const Header: React.FC<HeaderProps> = ({ lang, setLang, onOpenMinicursos }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   const t = translations[lang].header;
+  const topBanner = conteudoOriginal[lang].topBanner || { show: true, clickable: true, text: 'Conheça os minicursos', bgClass: 'bg-orange-950/90 hover:bg-orange-900 border-b border-orange-500/20', textClass: 'text-orange-400 group-hover:text-orange-300' };
+  const minicursosConfig = conteudoOriginal[lang].minicursos;
+  
+  const isBannerClickable = topBanner.show && topBanner.clickable !== false && minicursosConfig?.show !== false;
+
+  const bgClassClean = isBannerClickable 
+    ? topBanner.bgClass 
+    : (topBanner.bgClass || '').split(' ').filter((c: string) => !c.startsWith('hover:') && c !== 'cursor-pointer').join(' ');
+
+  const textClassClean = isBannerClickable 
+    ? topBanner.textClass 
+    : (topBanner.textClass || '').split(' ').filter((c: string) => !c.startsWith('group-hover:') && !c.startsWith('hover:')).join(' ');
 
   const menuItems = [
     { label: t.about, href: '#sobre' },
@@ -36,17 +50,34 @@ const Header: React.FC<HeaderProps> = ({ lang, setLang }) => {
   return (
     <>
       {/* Top Warning Banner */}
-      <div className="fixed top-0 left-0 w-full z-[60] bg-red-950/80 backdrop-blur-md py-1.5 md:py-2 flex items-center justify-center border-b border-red-500/20">
-        <div className="flex items-center gap-3 px-4">
-          <span className="font-display font-black text-[10px] md:text-xs text-red-400 uppercase tracking-[0.2em]">
-            {translations[lang].hero.soldOut}
-          </span>
-        </div>
-      </div>
+      {topBanner.show && (
+        isBannerClickable ? (
+          <button 
+            onClick={onOpenMinicursos}
+            className={`fixed top-0 left-0 w-full z-[60] backdrop-blur-md py-1.5 md:py-2 flex items-center justify-center transition-colors cursor-pointer group ${bgClassClean}`}
+          >
+            <div className="flex items-center gap-3 px-4">
+              <span className={`font-display font-black text-[10px] md:text-xs uppercase tracking-[0.2em] transition-colors flex items-center gap-1.5 ${textClassClean}`}>
+                {topBanner.text}
+              </span>
+            </div>
+          </button>
+        ) : (
+          <div 
+            className={`fixed top-0 left-0 w-full z-[60] backdrop-blur-md py-1.5 md:py-2 flex items-center justify-center ${bgClassClean}`}
+          >
+            <div className="flex items-center gap-3 px-4">
+              <span className={`font-display font-black text-[10px] md:text-xs uppercase tracking-[0.2em] ${textClassClean}`}>
+                {topBanner.text}
+              </span>
+            </div>
+          </div>
+        )
+      )}
 
-      <header className={`fixed top-10 md:top-12 left-0 w-full z-50 flex justify-center px-4 md:px-0 transition-all duration-500 ${scrolled ? 'translate-y-[-5px]' : ''}`}>
+      <header className={`fixed ${topBanner.show ? 'top-10 md:top-12' : 'top-2 md:top-4'} left-0 w-full z-50 flex justify-center px-4 md:px-0 transition-all duration-500 ${scrolled ? 'translate-y-[-5px]' : ''}`}>
         {/* Compact centralized pill menu */}
-        <div className={`w-fit max-w-[95%] bg-white/[0.03] backdrop-blur-xl border border-white/20 rounded-full px-4 md:px-8 py-2 md:py-2.5 flex justify-between items-center gap-6 md:gap-10 shadow-[0_8px_32px_0_rgba(0,0,0,0.4)] backdrop-saturate-150 relative overflow-hidden transition-all duration-500 mt-[20px] md:mt-0 lg:mt-[20px] ${scrolled ? 'border-emerald-500/40 bg-emerald-500/[0.05] shadow-emerald-500/10' : ''}`}>
+        <div className={`w-fit max-w-[95%] bg-white/[0.03] backdrop-blur-xl border border-white/20 rounded-full px-4 md:px-8 py-2 md:py-2.5 flex justify-between items-center gap-6 md:gap-10 shadow-[0_8px_32px_0_rgba(0,0,0,0.4)] backdrop-saturate-150 relative overflow-hidden transition-all duration-500 ${topBanner.show ? 'mt-[20px] md:mt-0 lg:mt-[20px]' : 'mt-0'} ${scrolled ? 'border-emerald-500/40 bg-emerald-500/[0.05] shadow-emerald-500/10' : ''}`}>
           
           {/* Liquid Sheen Overlay */}
           <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/5 via-transparent to-white/5 pointer-events-none" />

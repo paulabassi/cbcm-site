@@ -46,7 +46,12 @@ const Registration: React.FC<{ lang: Language }> = ({ lang }) => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
-      } : {}}
+      } : {
+        backgroundImage: 'url(/images/decor/bg-1.webp)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
     >
       {/* Soft Ambient Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-[radial-gradient(circle,rgba(16,185,129,0.02)_0%,transparent_70%)] pointer-events-none z-0"></div>
@@ -66,12 +71,7 @@ const Registration: React.FC<{ lang: Language }> = ({ lang }) => {
           }}
         >
           {/* Card with sleek glassmorphism background (like the nav bar on mobile, direct on background on desktop) */}
-          <div className="relative p-8 md:p-0 mx-auto w-full md:w-[1200px] min-h-[350px] bg-white/[0.03] md:bg-transparent backdrop-blur-xl md:backdrop-blur-none border border-white/20 md:border-none rounded-3xl md:rounded-none shadow-[0_24px_80px_rgba(0,0,0,0.4)] md:shadow-none backdrop-saturate-150 md:backdrop-saturate-100 md:hover:bg-transparent transition-all duration-500 overflow-hidden md:overflow-visible flex flex-col items-center justify-center gap-12 group">
-            {/* Green Glow from Top - hidden on desktop */}
-            <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-[80%] h-32 bg-emerald-500/5 pointer-events-none rounded-full blur-[50px] md:hidden" />
-            
-            {/* Soft subtle green tone - hidden on desktop */}
-            <div className="absolute inset-0 bg-emerald-500/[0.02] pointer-events-none md:hidden" />
+          <div className="relative p-0 mx-auto w-full md:w-[1200px] min-h-[350px] bg-transparent backdrop-blur-none border-none rounded-none shadow-none transition-all duration-500 overflow-visible flex flex-col items-center justify-center gap-12 group">
             
             <div className="relative z-10 flex flex-col items-center text-center w-full md:max-w-[800px] mx-auto">
               <h2 className="font-display font-black text-3xl md:text-[44px] leading-[1.1] text-white tracking-tight mb-6">

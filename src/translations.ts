@@ -34,7 +34,8 @@ export const translations = {
       viewSchedule: conteudoOriginal.pt.hero.viewSchedule,
       viewScheduleMobile: conteudoOriginal.pt.hero.viewScheduleMobile,
       posterGuidelinesLink: 'Orientações sobre pôsteres',
-      updatedScheduleLink: 'Programação Atualizada'
+      updatedScheduleLink: 'Programação Atualizada',
+      minicursosLink: 'Minicursos'
     },
     announcement: {
       whatsapp: conteudoOriginal.pt.announcement.whatsapp,
@@ -85,25 +86,11 @@ export const translations = {
       presentationTitle: 'Apresentação',
       presentationSubtitle: 'Presença e comissão avaliadora',
       formatLabel: 'Formato e dimensões',
-      formatDetails: [
-        'Formato retrato (vertical);',
-        'Tamanho máximo de 90x120cm (largura x altura);',
-        'Estrutura superior e cordão para ser pendurado em um tripé com gancho único;',
-        'Utilize fonte tamanho 32 ou superior para garantir leitura a aproximadamente 1,5 m.'
-      ],
+      formatDetails: conteudoOriginal.pt.posterGuidelines.formatDetails,
       structureDetailsIntro: 'O pôster deverá conter obrigatoriamente:',
-      structureItems: [
-        'Título idêntico ao do resumo submetido;',
-        'Nome de todos os autores e e-mail do autor responsável para correspondência;',
-        'Logomarca e/ou nome da instituição de origem;',
-        'Conteúdo organizado, preferencialmente, nas seguintes seções:'
-      ],
-      presentationIntro: 'Durante a apresentação, o autor responsável ou um dos coautores deverá:',
-      presentationItems: [
-        'Permanecer ao lado do pôster durante todo o horário definido pela organização, conforme o cronograma oficial;',
-        'Apresentar o trabalho à comissão avaliadora;',
-        'Responder aos questionamentos da comissão avaliadora.'
-      ]
+      structureItems: conteudoOriginal.pt.posterGuidelines.structureItems,
+      presentationIntro: conteudoOriginal.pt.posterGuidelines.presentationIntro,
+      presentationItems: conteudoOriginal.pt.posterGuidelines.presentationItems
     },
     registration: {
       title: 'Taxas de',
@@ -133,6 +120,12 @@ export const translations = {
     alert: {
       attention: 'ATENÇÃO:',
       message: conteudoOriginal.pt.alert.message,
+    },
+    topBanner: {
+      show: conteudoOriginal.pt.topBanner.show,
+      text: conteudoOriginal.pt.topBanner.text,
+      bgClass: conteudoOriginal.pt.topBanner.bgClass,
+      textClass: conteudoOriginal.pt.topBanner.textClass,
     },
     speakers: {
       title: 'Palestrantes',
@@ -323,7 +316,8 @@ Será premiado um único trabalho por categoria, independentemente da subárea.
       viewSchedule: conteudoOriginal.en.hero.viewSchedule,
       viewScheduleMobile: conteudoOriginal.en.hero.viewScheduleMobile,
       posterGuidelinesLink: 'Poster Guidelines',
-      updatedScheduleLink: 'Updated Schedule'
+      updatedScheduleLink: 'Updated Schedule',
+      minicursosLink: 'Short Courses'
     },
     announcement: {
       whatsapp: conteudoOriginal.en.announcement.whatsapp,
@@ -374,25 +368,11 @@ Será premiado um único trabalho por categoria, independentemente da subárea.
       presentationTitle: 'Presentation',
       presentationSubtitle: 'On-site dynamics and evaluation',
       formatLabel: 'Format and dimensions',
-      formatDetails: [
-        'Portrait format (vertical);',
-        'Maximum size of 90x120cm (width x height);',
-        'Upper structure and cord to be hung on a single-hook tripod;',
-        'Use font size 32 or larger to ensure readability at approximately 1.5 m.'
-      ],
+      formatDetails: conteudoOriginal.en.posterGuidelines.formatDetails,
       structureDetailsIntro: 'The poster must contain the following:',
-      structureItems: [
-        'Title identical to the submitted abstract;',
-        'Names of all authors and email of the corresponding author for correspondence;',
-        'Logo and/or name of the institution of origin;',
-        'Content organized, preferably, in the following sections:'
-      ],
-      presentationIntro: 'During the presentation, the corresponding author or one of the co-authors must:',
-      presentationItems: [
-        'Remain by the poster during the entire presentation time slot defined by the organization, in accordance with the official schedule;',
-        'Present the research to the evaluation committee;',
-        'Answer questions from the evaluation committee.'
-      ]
+      structureItems: conteudoOriginal.en.posterGuidelines.structureItems,
+      presentationIntro: conteudoOriginal.en.posterGuidelines.presentationIntro,
+      presentationItems: conteudoOriginal.en.posterGuidelines.presentationItems
     },
     registration: {
       title: 'Registration',
@@ -422,6 +402,12 @@ Será premiado um único trabalho por categoria, independentemente da subárea.
     alert: {
       attention: 'ATTENTION:',
       message: conteudoOriginal.en.alert.message,
+    },
+    topBanner: {
+      show: conteudoOriginal.en.topBanner.show,
+      text: conteudoOriginal.en.topBanner.text,
+      bgClass: conteudoOriginal.en.topBanner.bgClass,
+      textClass: conteudoOriginal.en.topBanner.textClass,
     },
     speakers: {
       title: 'Featured',

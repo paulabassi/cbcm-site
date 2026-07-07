@@ -1,14 +1,16 @@
 
 import React, { useRef, useEffect, useState } from 'react';
 import { ASSETS } from '../src/constants';
-import { Trophy, FileText, UserPlus, Calendar, AlertCircle, ArrowRight, Sparkles } from 'lucide-react';
+import { Trophy, FileText, UserPlus, Calendar, AlertCircle, ArrowRight, Sparkles, GraduationCap } from 'lucide-react';
 import { Language, translations } from '../src/translations';
+import { conteudoOriginal } from '../src/conteudo';
 
 interface HeroProps {
   lang: Language;
+  onOpenMinicursos: () => void;
 }
 
-const Hero: React.FC<HeroProps> = ({ lang }) => {
+const Hero: React.FC<HeroProps> = ({ lang, onOpenMinicursos }) => {
   const t = translations[lang].hero;
   const bgRef = useRef<HTMLImageElement>(null);
   const mousePos = useRef({ x: 0, y: 0 });
@@ -230,27 +232,47 @@ const Hero: React.FC<HeroProps> = ({ lang }) => {
         {/* Bottom Section: CTA Buttons & Partners */}
         <div className="relative z-30 flex flex-col items-center gap-10 mt-8 md:mt-12 opacity-0 animate-[fadeIn_1.5s_ease-out_0.6s_forwards]">
           <div className="flex flex-col sm:flex-row items-center gap-4 w-full px-6 justify-center">
-            <a 
-              href="#programacao"
-              className="group flex items-center justify-center gap-2 sm:gap-3 w-[300px] sm:w-auto px-5 sm:px-8 py-3 sm:py-4 bg-white/10 hover:bg-white/20 border border-white/20 rounded-2xl transition-all duration-300 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] max-w-full"
-            >
-              <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white group-hover:rotate-12 transition-transform shrink-0" />
-              <span className="text-white font-display font-bold text-[10px] sm:text-sm tracking-widest uppercase text-center">
-                {t.updatedScheduleLink}
-              </span>
-              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white group-hover:translate-x-1 transition-transform shrink-0" />
-            </a>
+            {/* Programação Link (Order: 2 on mobile, 1 on desktop) */}
+            {((conteudoOriginal[lang].hero as any).buttons?.schedule?.show !== false) && (
+              <a 
+                href={((conteudoOriginal[lang].hero as any).buttons?.schedule?.href || '#programacao')}
+                className="order-2 sm:order-1 group flex items-center justify-center gap-2 sm:gap-3 w-[300px] sm:w-auto px-5 sm:px-8 py-3 sm:py-4 bg-white/10 hover:bg-white/20 border border-white/20 rounded-2xl transition-all duration-300 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] max-w-full"
+              >
+                <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white group-hover:rotate-12 transition-transform shrink-0" />
+                <span className="text-white font-display font-bold text-[10px] sm:text-sm tracking-widest uppercase text-center">
+                  {((conteudoOriginal[lang].hero as any).buttons?.schedule?.text || t.updatedScheduleLink)}
+                </span>
+                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white group-hover:translate-x-1 transition-transform shrink-0" />
+              </a>
+            )}
 
-            <a 
-              href="#posters"
-              className="group flex items-center justify-center gap-2 sm:gap-3 w-[300px] sm:w-auto px-5 sm:px-8 py-3 sm:py-4 bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/40 rounded-2xl transition-all duration-300 active:scale-95 shadow-[0_0_20px_rgba(16,185,129,0.1)] hover:shadow-[0_0_30px_rgba(16,185,129,0.25)] max-w-full"
-            >
-              <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white group-hover:rotate-12 transition-transform shrink-0" />
-              <span className="text-white font-display font-bold text-[10px] sm:text-sm tracking-widest uppercase text-center">
-                {t.posterGuidelinesLink}
-              </span>
-              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white group-hover:translate-x-1 transition-transform shrink-0" />
-            </a>
+            {/* Primary Minicursos Button (Order: 1 on mobile, 2 on desktop) */}
+            {((conteudoOriginal[lang].hero as any).buttons?.minicursos?.show !== false) && (conteudoOriginal[lang].minicursos?.show !== false) && (
+              <button 
+                onClick={onOpenMinicursos}
+                className="order-1 sm:order-2 group flex items-center justify-center gap-2 sm:gap-3 w-[300px] sm:w-auto px-5 sm:px-8 py-3 sm:py-4 bg-orange-500/15 hover:bg-orange-500/25 border border-orange-500/40 rounded-2xl transition-all duration-300 active:scale-95 shadow-[0_0_25px_rgba(249,115,22,0.15)] hover:shadow-[0_0_35px_rgba(249,115,22,0.3)] max-w-full"
+              >
+                <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400 group-hover:rotate-12 transition-transform shrink-0" />
+                <span className="text-white font-display font-extrabold text-[10px] sm:text-sm tracking-widest uppercase text-center group-hover:text-orange-200 transition-colors">
+                  {((conteudoOriginal[lang].hero as any).buttons?.minicursos?.text || t.minicursosLink)}
+                </span>
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-white group-hover:translate-x-1 group-hover:text-orange-300 transition-all shrink-0" />
+              </button>
+            )}
+
+            {/* Poster Guidelines Link (Order: 3 on mobile, 3 on desktop) */}
+            {((conteudoOriginal[lang].hero as any).buttons?.posters?.show !== false) && (
+              <a 
+                href={((conteudoOriginal[lang].hero as any).buttons?.posters?.href || '#posters')}
+                className="order-3 sm:order-3 group flex items-center justify-center gap-2 sm:gap-3 w-[300px] sm:w-auto px-5 sm:px-8 py-3 sm:py-4 bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/40 rounded-2xl transition-all duration-300 active:scale-95 shadow-[0_0_20px_rgba(16,185,129,0.1)] hover:shadow-[0_0_30px_rgba(16,185,129,0.25)] max-w-full"
+              >
+                <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white group-hover:rotate-12 transition-transform shrink-0" />
+                <span className="text-white font-display font-bold text-[10px] sm:text-sm tracking-widest uppercase text-center">
+                  {((conteudoOriginal[lang].hero as any).buttons?.posters?.text || t.posterGuidelinesLink)}
+                </span>
+                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white group-hover:translate-x-1 transition-transform shrink-0" />
+              </a>
+            )}
           </div>
 
 

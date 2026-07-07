@@ -1,210 +1,19 @@
 
 import React, { useState, useMemo } from 'react';
-import { ASSETS } from '../src/constants';
 import { Language, translations } from '../src/translations';
+import { conteudoOriginal } from '../src/conteudo';
 
 interface Speaker {
   name: string;
   role: string;
   univ: string;
   image?: string;
+  hide?: boolean;
 }
 
 interface SpeakersProps {
   lang: Language;
 }
-
-const INTERNATIONAL_SPEAKERS: Speaker[] = [
-  { 
-    name: 'Prof. Dr. Fabian Romero Clavijo', 
-    role: 'CANADÁ', 
-    univ: "Bishop's University",
-    image: ASSETS.SPEAKERS.INTERNATIONAL.FABIAN_ROMERO
-  },
-  { 
-    name: 'Prof. Dr. Gregor Schöner', 
-    role: 'ALEMANHA', 
-    univ: 'Ruhr-Universität Bochum',
-    image: ASSETS.SPEAKERS.INTERNATIONAL.GREGOR_SCHONER
-  },
-  { 
-    name: 'Prof. Dr. James Rudd', 
-    role: 'NORUEGA', 
-    univ: 'Norwegian School of Sport Sciences',
-    image: ASSETS.SPEAKERS.INTERNATIONAL.JAMES_RUDD
-  },
-  { 
-    name: 'Prof. Dr. Jean-Jacques Orban de Xivry', 
-    role: 'BÉLGICA', 
-    univ: 'KU Leuven Institute',
-    image: ASSETS.SPEAKERS.INTERNATIONAL.ORBAN_DE_XIVRY
-  },
-  { 
-    name: 'Prof. Dr. José António Maia', 
-    role: 'PORTUGAL', 
-    univ: 'Faculdade de Desporto da Universidade do Porto',
-    image: ASSETS.SPEAKERS.INTERNATIONAL.JOSE_MAIA
-  },
-  { 
-    name: 'Profa. Dra. Katharina Stibrant Sunnerhagen', 
-    role: 'SUÉCIA', 
-    univ: 'University of Gothenburg',
-    image: ASSETS.SPEAKERS.INTERNATIONAL.KATHARINA_SUNNERHAGEN
-  },
-  { 
-    name: 'Prof. Dr. Mark L. Latash', 
-    role: 'EUA', 
-    univ: 'Pennsylvania State University',
-    image: ASSETS.SPEAKERS.INTERNATIONAL.MARK_LATASH
-  },
-  { 
-    name: 'Prof. Dr. Matthias Weigelt', 
-    role: 'ALEMANHA', 
-    univ: 'University of Paderborn',
-    image: ASSETS.SPEAKERS.INTERNATIONAL.MATTHIAS_WEIGELT
-  },
-  { 
-    name: 'Profa. Dra. Sara Pereira', 
-    role: 'PORTUGAL', 
-    univ: 'Faculdade de Desporto da Universidade do Porto',
-    image: ASSETS.SPEAKERS.INTERNATIONAL.SARA_PEREIRA
-  },
-  { 
-    name: 'Prof. Dr. Stuart Baker', 
-    role: 'REINO UNIDO', 
-    univ: 'Newcastle University',
-    image: ASSETS.SPEAKERS.INTERNATIONAL.STUART_BAKER
-  },
-];
-
-const NATIONAL_SPEAKERS: Speaker[] = [
-  { 
-    name: 'Profa. Dra. Cinthya Walter', 
-    role: 'MA', 
-    univ: 'Universidade Federal do Maranhão',
-    image: ASSETS.SPEAKERS.NATIONAL.CINTHYA_WALTER
-  },
-  { 
-    name: 'Prof. Dr. Danilo Silva', 
-    role: 'SE', 
-    univ: 'Universidade Federal de Sergipe',
-    image: ASSETS.SPEAKERS.NATIONAL.DANILO_SILVA
-  },
-  { 
-    name: 'Prof. Dr. Fabio Augusto Barbieri', 
-    role: 'SP', 
-    univ: 'Universidade Estadual Paulista',
-    image: ASSETS.SPEAKERS.NATIONAL.FABIO_BARBIERI
-  },
-  { 
-    name: 'Prof. Dr. Giordano Bonuzzi', 
-    role: 'DF', 
-    univ: 'Universidade de Brasília',
-    image: ASSETS.SPEAKERS.NATIONAL.GIORDANO_BONUZZI
-  },
-  { 
-    name: 'Prof. Dr. Go Tani', 
-    role: 'SP', 
-    univ: 'Escola de Educação Física e Esporte da USP',
-    image: ASSETS.SPEAKERS.NATIONAL.GO_TANI
-  },
-  { 
-    name: 'Prof. Dr. Herbert Ugrinowitsch', 
-    role: 'MG', 
-    univ: 'Universidade Federal de Minas Gerais',
-    image: ASSETS.SPEAKERS.NATIONAL.HERBERT_UGRINOWITSCH
-  },
-  { 
-    name: 'Profa. Dra. Isabel de Camargo Neves Sacco', 
-    role: 'SP', 
-    univ: 'Faculdade de Medicina da USP',
-    image: ASSETS.SPEAKERS.NATIONAL.ISABEL_SACCO
-  },
-  { 
-    name: 'Prof. Dr. José Barela', 
-    role: 'SP', 
-    univ: 'Universidade Estadual Paulista',
-    image: ASSETS.SPEAKERS.NATIONAL.JOSE_BARELA
-  },
-  { 
-    name: 'Prof. Dr. José Roberto de Godoi', 
-    role: 'RO', 
-    univ: 'Universidade Federal de Rondônia',
-    image: ASSETS.SPEAKERS.NATIONAL.JOSE_GODOI
-  },
-  { 
-    name: 'Profa. Dra. Juliana Barbosa Goulardins', 
-    role: 'BA', 
-    univ: 'Escola Bahiana de Medicina e Saúde Pública',
-    image: ASSETS.SPEAKERS.NATIONAL.JULIANA_GOULARDINS
-  },
-  { 
-    name: 'Prof. Dr. Lucio Ferreira', 
-    role: 'AM', 
-    univ: 'Universidade Federal do Amazonas',
-    image: ASSETS.SPEAKERS.NATIONAL.LUCIO_FERREIRA
-  },
-  { 
-    name: 'Profa. Dra. Natalia Duarte Pereira', 
-    role: 'SP', 
-    univ: 'Universidade Federal de São Carlos', 
-    image: ASSETS.SPEAKERS.NATIONAL.NATALIA_PEREIRA
-  },
-  { 
-    name: 'Profa. Dra. Paula Fávaro Polastri Zago', 
-    role: 'SP', 
-    univ: 'Universidade Estadual Paulista', 
-    image: ASSETS.SPEAKERS.NATIONAL.PAULA_ZAGO
-  },
-  { 
-    name: 'Dr. Paulo Cezar Rocha dos Santos', 
-    role: 'RJ', 
-    univ: "Instituto D'Or",
-    image: ASSETS.SPEAKERS.NATIONAL.PAULO_CEZAR
-  },
-  { 
-    name: 'Prof. Dr. Paulo Felipe Bandeira', 
-    role: 'CE', 
-    univ: 'Universidade Regional do Cariri',
-    image: ASSETS.SPEAKERS.NATIONAL.PAULO_FELIPE
-  },
-  { 
-    name: 'Prof. Dr. Rafael dos Santos Henrique', 
-    role: 'PE', 
-    univ: 'Universidade Federal de Pernambuco',
-    image: ASSETS.SPEAKERS.NATIONAL.RAFAEL_HENRIQUE
-  },
-  { 
-    name: 'Prof. Dr. Renato Moraes', 
-    role: 'SP', 
-    univ: 'EEFERP-USP',
-    image: ASSETS.SPEAKERS.NATIONAL.RENATO_MORAES
-  },
-  { 
-    name: 'Prof. Dr. Ricardo Drews', 
-    role: 'RS', 
-    univ: 'Universidade Federal de Santa Maria',
-    image: ASSETS.SPEAKERS.NATIONAL.RICARDO_DREWS
-  },
-  { 
-    name: 'Prof. Dr. Rodolfo Benda', 
-    role: 'RS', 
-    univ: 'Universidade Federal de Pelotas', 
-    image: ASSETS.SPEAKERS.NATIONAL.RODOLFO_BENDA
-  },
-  { 
-    name: 'Prof. Dr. Sérgio Tosi Rodrigues', 
-    role: 'SP', 
-    univ: 'Universidade Estadual Paulista', 
-    image: ASSETS.SPEAKERS.NATIONAL.SERGIO_RODRIGUES
-  },
-  { 
-    name: 'Prof. Dr. Vitor Profeta', 
-    role: 'MG', 
-    univ: 'Universidade Federal de Minas Gerais',
-    image: ASSETS.SPEAKERS.NATIONAL.VITOR_PROFETA
-  }
-];
 
 
 const SpeakerCard: React.FC<{ s: Speaker; lang: Language }> = ({ s, lang }) => {
@@ -248,6 +57,14 @@ const SpeakerCard: React.FC<{ s: Speaker; lang: Language }> = ({ s, lang }) => {
 };
 
 const Speakers: React.FC<SpeakersProps> = ({ lang }) => {
+  const INTERNATIONAL_SPEAKERS = useMemo(() => {
+    return (conteudoOriginal[lang].speakersList.international as Speaker[]).filter(s => !s.hide);
+  }, [lang]);
+
+  const NATIONAL_SPEAKERS = useMemo(() => {
+    return (conteudoOriginal[lang].speakersList.national as Speaker[]).filter(s => !s.hide);
+  }, [lang]);
+
   const t = translations[lang].speakers;
   const [selectedCountry, setSelectedCountry] = useState(t.all);
   const [selectedState, setSelectedState] = useState(t.all);
@@ -261,22 +78,22 @@ const Speakers: React.FC<SpeakersProps> = ({ lang }) => {
   const countries = useMemo(() => {
     const uniqueCountries = Array.from(new Set(INTERNATIONAL_SPEAKERS.map(s => s.role))).sort();
     return [t.all, ...uniqueCountries];
-  }, [t.all]);
+  }, [t.all, INTERNATIONAL_SPEAKERS]);
 
   const states = useMemo(() => {
     const uniqueStates = Array.from(new Set(NATIONAL_SPEAKERS.map(s => s.role))).sort();
     return [t.all, ...uniqueStates];
-  }, [t.all]);
+  }, [t.all, NATIONAL_SPEAKERS]);
 
   const filteredInternational = useMemo(() => {
     if (selectedCountry === t.all) return INTERNATIONAL_SPEAKERS;
     return INTERNATIONAL_SPEAKERS.filter(s => s.role === selectedCountry);
-  }, [selectedCountry, t.all]);
+  }, [selectedCountry, t.all, INTERNATIONAL_SPEAKERS]);
 
   const filteredNational = useMemo(() => {
     if (selectedState === t.all) return NATIONAL_SPEAKERS;
     return NATIONAL_SPEAKERS.filter(s => s.role === selectedState);
-  }, [selectedState, t.all]);
+  }, [selectedState, t.all, NATIONAL_SPEAKERS]);
 
   return (
     <section id="palestrantes" className="py-20 md:py-32 px-6 md:px-12 bg-[#080808] border-b border-emerald-500/5 scroll-mt-0">

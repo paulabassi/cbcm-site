@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Language, translations } from '../src/translations';
+import { conteudoOriginal } from '../src/conteudo';
 import { GraduationCap, BookOpen, Award as AwardIcon, Trophy, X, Info } from 'lucide-react';
 import { motion, AnimatePresence, useInView, animate, useMotionValue, useTransform } from 'motion/react';
 import Markdown from 'react-markdown';
@@ -238,12 +239,14 @@ const AbstractSubmission: React.FC<{ lang: Language }> = ({ lang }) => {
                     </p>
                   </div>
                   
-                  <button 
-                    onClick={() => setIsRegulationOpen(true)}
-                    className="w-full py-3.5 bg-white/5 text-white border border-white/10 rounded-xl font-display font-black uppercase tracking-widest text-[10px] md:text-[9px] hover:bg-white hover:text-black transition-all shadow-xl"
-                  >
-                    {tAwards.howToParticipate.button}
-                  </button>
+                  {conteudoOriginal[lang].abstractSubmission?.regulationButton?.show !== false && (
+                    <button 
+                      onClick={() => setIsRegulationOpen(true)}
+                      className="w-full py-3.5 bg-white/5 text-white border border-white/10 rounded-xl font-display font-black uppercase tracking-widest text-[10px] md:text-[9px] hover:bg-white hover:text-black transition-all shadow-xl"
+                    >
+                      {conteudoOriginal[lang].abstractSubmission?.regulationButton?.text || tAwards.howToParticipate.button}
+                    </button>
+                  )}
                 </div>
               </div>
 

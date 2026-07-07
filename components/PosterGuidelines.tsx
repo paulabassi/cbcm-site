@@ -46,15 +46,15 @@ const PosterGuidelines: React.FC<PosterGuidelinesProps> = ({ lang }) => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center md:text-left mb-16 max-w-4xl">
-          <h2 className="text-[22px] md:text-5xl font-sans font-bold text-white tracking-tight leading-snug mb-4">
+        <div className="text-left mb-16 max-w-4xl">
+          <h2 className="font-display font-bold text-[32px] lg:text-[44px] tracking-tighter text-white text-left leading-[1.1] mb-4">
             {lang === 'pt' ? (
               <>
-                Orientações para <span className="text-emerald-500">confecção</span> e <span className="text-emerald-500">apresentação</span> de pôsteres
+                Orientações para <span className="text-emerald-500">confecção</span> <br /> e <span className="text-emerald-500">apresentação</span> de pôsteres
               </>
             ) : (
               <>
-                Guidelines for <span className="text-emerald-500">poster preparation</span> and <span className="text-emerald-500">presentation</span>
+                Guidelines for <span className="text-emerald-500">poster preparation</span> <br /> and <span className="text-emerald-500">presentation</span>
               </>
             )}
           </h2>
