@@ -409,7 +409,7 @@ export const conteudoOriginal = {
       day2: [
         { time: '07:00 - 08:00', activity: 'Recepção' },
         { time: '08:00 - 09:00', activity: 'Assembleia SOCIBRACOM' },
-        { time: '09:00 - 10:00', activity: 'Palestra', details: 'Profa. Dra. Katharina Sunnerhagen (University of Gothemburg)\n"The trajectory of functioning in the upper extremity after stroke"\nModerador: Prof. Dr. Sergio Silveira (EEFE-USP)' },
+        { time: '09:00 - 10:00', activity: 'Palestra', details: 'Profa. Dra. Katharina Sunnerhagen (University of Gothemburg)\n"The trajectory of functioning in the upper extremity after stroke"\nModerador: Prof. Dr. Giordano Bonuzzi (UnB)' },
         { time: '10:00 - 10:30', activity: 'Coffee Break' },
         { time: '10:30 - 12:00', activity: 'Mesas Redondas Simultâneas',  details: '▶ MESA 1 (sala 810) - Avanços na relação entre Reabilitação e Comportamento Motor\nModerador: Prof. Dr. Jorge Oliveira (EEFE-USP)\n• Profa. Dra. Juliana Goulardins (Escola Bahiana de Medicina e Saúde Pública)\n  Reabilitar ou modular? O papel da neuromodulação nos avanços do comportamento motor\n• Profa. Dra. Isabel Sacco (USP)\n  Avanços na reabilitação de déficits musculoesqueléticos da neuropatia diabética: integrando a biomecânica, o comportamento motor e a prevenção\n• Profa. Dra. Natália Duarte Pereira (UFSCar)\n  Comportamento motor na hemiparesia pós-AVC: novas perspectivas em reabilitação\n\n▶ MESA 2 (sala 807) - As bases do comportamento motor para formação e detecção de talentos no esporte\nModerador: Prof. Dr. Umberto Corrêa (EEFE-USP)\n• Prof. Dr. Fabian Clavijo (INS Quebec)\n  Habilidades perceptivo-cognitivas na detecção e formação de talentos\n• Prof. Dr. Rodolfo Benda (UFPel)\n  Talento esportivo: um fenômeno complexo\n• Prof. Dr. Tony Meireles dos Santos (UFPE)\n  Letramento esportivo mediado por tecnologia: integração entre análise de desempenho, prescrição formativa e microlearning no surfe\n\n▶ MESA 3 (sala 812) - Desenvolvimento Motor e Atividade Física\nModerador: Prof. Dr. Luciano Basso (EEFE-USP)\n• Profa. Dra. Sara Pereira (FADEUP)\n  Exploração da espiral de engajamento motor no modelo de Stodden: resultados de uma análise de mediação no projeto REACT\n• Prof. Dr. Danilo Silva (UFS)\n  Desenvolvimento motor e atividade física: uma aproximação necessária\n• Prof. Dr. Rafael dos Santos Henrique (UFPE)\n  Avanços e perspectivas no estudo do Desenvolvimento Motor e Atividade Física na infância e adolescência\n\n▶ MESA 4 (auditório) - A Intersecção entre Aprendizagem Motora e Desenvolvimento Motor\nModerador: Prof. Dr. Flavio Bastos (EEFE-USP)\n• Prof. Dr. José Barela (UNESP-Bauru)\n  Desenvolvimento e aprendizagem: dois lados da mesma moeda?\n• Prof. Dr. Herbert Ugrinowitsch (UFMG)\n  Intersecção entre Aprendizagem Motora e Desenvolvimento Motor: do fenômeno à investigação\n• Profa. Dra. Cinthya Walter (UFMA)\n  Processo adaptativo: intersecção entre aprendizagem motora e desenvolvimento motor'},
         { time: '12:00 - 13:15', activity: 'Almoço' },
@@ -835,7 +835,7 @@ export const conteudoOriginal = {
         { time: '01:15 PM - 01:35 PM', activity: '20 Years of the Brazilian Journal of Motor Behavior', details: 'Prof. Dr. Fábio Barbieri (President of SOCIBRACOM and Editor-in-Chief of BJMB)' },
         { time: '01:45 PM - 03:15 PM', activity: 'Simultaneous Round Tables', details: '• Neurophysiology and motor behavior (Mod: Prof. Dr. Jorge Oliveira)\n• Classical paradigms of motor control (Mod: Prof. Dr. Umberto Corrêa)\n• Interdependence of Motor Development and other Domains (Mod: Prof. Dr. Luciano Basso)\n• Motor Learning and Intervening Factors (Mod: Prof. Dr. Flavio Bastos)' },
         { time: '03:15 PM - 04:30 PM', activity: 'Coffee Break / Posters' },
-        { time: '04:30 PM - 05:30 PM', activity: 'Keynote', details: 'Prof. Dr. Go Tani (EEFE-USP)\n"Motor Behavior in Brazil: contributions to professional intervention in Physical Education"\nModerator: Prof. Dr. Umberto Corrêa (EEFE-USP)' },
+        { time: '04:30 PM - 05:30 PM', activity: 'Keynote', details: 'Prof. Dr. Go Tani (EEFE-USP)\n"Motor Behavior in Brazil: contributions to professional intervention in Physical Education"\nModerator: Profa. Dra. Andrea Freudenheim (EEFE-USP)' },
         { time: '05:30 PM - 06:30 PM', activity: 'Book Launch and Signing', details: '"Motor behavior: Research and intervention" (Eds. Go Tani & Umberto C. Corrêa)' },
       ],
       day2: [
@@ -846,11 +846,10 @@ export const conteudoOriginal = {
         { time: '10:30 AM - 12:00 PM', activity: 'Simultaneous Round Tables', details: '• Advances in the relationship between Rehabilitation and Motor Behavior (Mod: Prof. Dr. Jorge Oliveira)\n• The bases of motor behavior for talent formation and detection in sport (Mod: Prof. Dr. Umberto Correa)\n• Motor Development and Physical Activity (Mod: Prof. Dr. Luciano Basso)\n• The Intersection between Motor Learning and Motor Development (Mod: Prof. Dr. Flavio Bastos)' },
         { time: '12:00 PM - 01:15 PM', activity: 'Lunch' },
         { time: '01:15 PM - 02:15 PM', activity: 'Keynote', details: 'Prof. Dr. James Rudd (Norwegian School of Sport Sciences)\n"Designing meaningful movement experiences across the lifecourse: pedagogical insights for skill learning and expertise"\nModerator: Prof. Dr. José Maia (FADEUP)' },
-        { time: '02:30 PM - 03:30 PM', activity: 'Keynote', details: 'Prof. Dr. Matthias Weigelt (Paderborn University)\n"Cognitive control of movement and performance in sport"\nModerator: Prof. Dra. Andrea Freudenheim (EEFE-USP)' },
+        { time: '02:30 PM - 03:30 PM', activity: 'Keynote', details: 'Prof. Dr. Matthias Weigelt (Paderborn University)\n"(Neuro-)Cognitive control of movement and performance in sport"\nModerator: Prof. Dra. Andrea Freudenheim (EEFE-USP)' },
         { time: '03:30 PM - 04:30 PM', activity: 'Coffee Break / Posters' },
         { time: '04:30 PM - 05:30 PM', activity: 'Keynote', details: 'Prof. Dr. José Maia (University of Porto)\n"Why is it “forbidden” to deal with children’s motor coordination in Motor Development?"\nModerator: Prof. Dr. Go Tani (EEFE-USP)' },
-        { time: '05:30 PM - 06:00 PM', activity: 'Cultural Presentation', details: 'USP Choir' },
-        { time: '07:30 PM', activity: 'Event Dinner', details: 'TBA' },
+        { time: '05:30 PM - 06:00 PM', activity: 'Social Event', details: '"O Pasquim: Bar & Prosa"\nR. Aspicuelta, 524 - Vila Madalena\nSão Paulo - SP, 05433-011' },      
       ],
       day3: [
         { time: '08:00 AM - 09:00 AM', activity: 'Reception' },
@@ -861,7 +860,7 @@ export const conteudoOriginal = {
         { time: '01:15 PM - 02:15 PM', activity: 'Awards and Young Researcher Keynote' },
         { time: '02:30 PM - 03:30 PM', activity: 'Keynote', details: 'Prof. Dr. Stuart Baker (Newcastle University)\n"How the brain controls reaching"\nModerator: Prof. Dr. Flavio Bastos (EEFE-USP)' },
         { time: '03:30 PM - 04:30 PM', activity: 'Coffee Break / Posters' },
-        { time: '04:30 PM - 05:30 PM', activity: 'Closing Keynote', details: 'Prof. Dr. Gregor Schöner (Rhur University)\n"How complex are the descending activation patterns that drive simple arm movements?"\nModerator: Prof. Dr. Flávio Bastos (EEFE-USP)' },
+        { time: '04:30 PM - 05:30 PM', activity: 'Closing Keynote', details: 'Prof. Dr. Gregor Schöner (Rhur University)\n"How complex are the descending activation patterns that drive simple arm movements?"\nModerator: Prof. Dr. Matheus Pacheco (EEFE-USP)' },
       ]
     },
 
