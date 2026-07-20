@@ -76,9 +76,9 @@ export const conteudoOriginal = {
         professional: 'R$ 616,00',
       },
       cta: {
-        description: 'As inscrições para o XIII CBCM foram encerradas. Agradecemos a todos pelo interesse e nos vemos no evento!',
-        descriptionMobile: 'Inscrições encerradas. Agradecemos a todos e nos vemos no evento!',
-      }
+  description: 'As inscrições para o XIII CBCM foram encerradas. Agradecemos a todos pelo interesse e nos vemos no evento!\n\nPolítica de cancelamento e reembolso\nSalvo situações excepcionais devidamente justificadas e analisadas pela Comissão Organizadora, não serão realizados reembolsos em casos de desistência da participação no XIII Congresso Brasileiro de Comportamento Motor (CBCM).',
+  descriptionMobile: 'Inscrições encerradas. Agradecemos a todos e nos vemos no evento!\n\nPolítica de cancelamento e reembolso\nNão serão realizados reembolsos em casos de desistência, salvo situações excepcionais analisadas pela Comissão Organizadora.',
+}
     },
 
     // Hospedagem / Descontos em Hotéis e Local do Evento
