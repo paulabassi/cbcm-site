@@ -71,30 +71,43 @@ const Registration: React.FC<{ lang: Language }> = ({ lang }) => {
           }}
         >
           {/* Card with sleek glassmorphism background (like the nav bar on mobile, direct on background on desktop) */}
-          <div className="relative p-0 mx-auto w-full md:w-[1200px] min-h-[350px] bg-transparent backdrop-blur-none border-none rounded-none shadow-none transition-all duration-500 overflow-visible flex flex-col items-center justify-center gap-12 group">
-            
-            <div className="relative z-10 flex flex-col items-center text-center w-full md:max-w-[800px] mx-auto">
-              <h2 className="font-display font-black text-3xl md:text-[44px] leading-[1.1] text-white tracking-tight mb-6">
-                {lang === 'pt' ? 'Vagas Esgotadas' : 'Sold Out'}
-              </h2>
-              
-              <div className="space-y-3 text-[#f2f8f3] text-sm md:text-base font-sans font-medium">
-                <p className="text-[#f2f8f3] text-sm md:text-base">
-                  {lang === 'pt' ? (
-                    'As inscrições para o XIII CBCM estão encerradas.'
-                  ) : (
-                    'Registrations for the XIII CBCM are now closed.'
-                  )}
-                </p>
-                <p className="text-[#f2f8f3]/85 text-sm md:text-base">
-                  {lang === 'pt' ? (
-                    'Agradecemos o interesse de todos e nos vemos no evento!'
-                  ) : (
-                    'Thank you for your interest and we look forward to seeing you at the event!'
-                  )}
-                </p>
-              </div>
-            </div>
+         {/* Card with sleek glassmorphism background */}
+<div className="relative p-0 mx-auto w-full md:w-[1200px] min-h-[350px] bg-transparent backdrop-blur-none border-none rounded-none shadow-none transition-all duration-500 overflow-visible flex flex-col items-center justify-center gap-12 group">
+
+  <div className="relative z-10 flex flex-col items-center text-center w-full md:max-w-[800px] mx-auto">
+    <h2 className="font-display font-black text-3xl md:text-[44px] leading-[1.1] text-white tracking-tight mb-6">
+      {lang === 'pt' ? 'Vagas Esgotadas' : 'Sold Out'}
+    </h2>
+
+    <div className="space-y-3 text-[#f2f8f3] text-sm md:text-base font-sans font-medium">
+      <p className="text-[#f2f8f3] text-sm md:text-base">
+        {lang === 'pt'
+          ? 'As inscrições para o XIII CBCM estão encerradas.'
+          : 'Registrations for the XIII CBCM are now closed.'}
+      </p>
+
+      <p className="text-[#f2f8f3]/85 text-sm md:text-base">
+        {lang === 'pt'
+          ? 'Agradecemos o interesse de todos e nos vemos no evento!'
+          : 'Thank you for your interest and we look forward to seeing you at the event!'}
+      </p>
+
+      <div className="pt-4 mt-6 border-t border-white/20">
+        <h3 className="text-white font-bold text-base md:text-lg mb-2">
+          {lang === 'pt'
+            ? 'Política de cancelamento e reembolso'
+            : 'Cancellation and Refund Policy'}
+        </h3>
+
+        <p className="text-[#f2f8f3]/85 text-sm md:text-base">
+          {lang === 'pt'
+            ? 'Informamos que, salvo situações excepcionais devidamente justificadas e analisadas pela Comissão Organizadora, não serão realizados reembolsos em casos de desistência da participação no XIII Congresso Brasileiro de Comportamento Motor (CBCM).'
+            : 'Please note that, except in exceptional circumstances duly justified and reviewed by the Organizing Committee, no refunds will be issued in cases of withdrawal from participation in the XIII Brazilian Congress of Motor Behavior (CBCM).'}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
           </div>
         </div>
       </div>
