@@ -104,8 +104,7 @@ const Registration: React.FC<{ lang: Language }> = ({ lang }) => {
             ? 'Informamos que, salvo situações excepcionais devidamente justificadas e analisadas pela Comissão Organizadora, não serão realizados reembolsos em casos de desistência da participação no XIII Congresso Brasileiro de Comportamento Motor (CBCM).'
             : 'Please note that, except in exceptional circumstances duly justified and reviewed by the Organizing Committee, no refunds will be issued in cases of withdrawal from participation in the XIII Brazilian Congress of Motor Behavior (CBCM).'}
         </p>
-      </div>
-    </div>
+         </div>
   </div>
 </div>
           </div>
